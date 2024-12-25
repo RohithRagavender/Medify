@@ -1,0 +1,24 @@
+This are the Package which I install to this project:
+
+
+<!--..... BACK END PACKAGES.......-->
+
+1.bcrypt: A library to help you hash passwords.
+2.cloudinary: A library for uploading images and videos to Cloudinary.
+3.cookie-parser: A middleware to parse cookies.
+4.cors: A middleware to enable Cross-Origin Resource Sharing.
+5.dotenv: A module to load environment variables from a .env file.
+6.express: A fast, unopinionated, minimalist web framework for Node.js.
+7.mongoose: A MongoDB object modeling tool designed to work in an asynchronous environment.
+8.express-fileupload: A middleware to handle file uploads.
+9.jsonwebtoken: A library to work with JSON Web Tokens (JWT).
+10.validator: A library of string validators and sanitizers.
+
+
+<!--......FRONT END PACKAGES......-->
+
+11.axios: A promise-based HTTP client for making API requests.
+12.react-icons: A library that provides popular icons as React components.
+13.react-multi-carousel: A responsive multi-item carousel component for React.
+14.react-router-dom: A package for routing in React applications.
+15.react-toastify: A library to display customizable toast notifications in React.

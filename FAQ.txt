@@ -1,0 +1,75 @@
+1. What services are available at your hospital?
+Answer: "We offer a comprehensive range of services, including emergency care, outpatient consultations, diagnostic services (X-rays, CT scans, MRIs), surgeries, maternal and pediatric care, and rehabilitation therapy."
+
+2. How do I book an appointment with a doctor?
+Answer: "Appointments can be made through our website or mobile app. You can also call our reception for assistance. Simply select your preferred doctor, choose a time, and confirm your appointment."
+
+3. What are the hospital's working hours?
+Answer: "Our hospital operates 24/7 for emergency services. Outpatient clinics are open Monday through Friday, from 9 AM to 6 PM."
+
+4. What insurance providers do you accept?
+Answer: "We accept a wide range of insurance providers, including [list major providers]. Please check with your insurance company or our billing department for more details on coverage."
+
+5. Can I book an appointment online?
+Answer: "Yes, appointments can be scheduled online through our patient portal or mobile app. Log in, select a doctor, and choose a convenient time."
+
+6. Can I cancel or reschedule an appointment?
+Answer: "Yes, you can cancel or reschedule your appointment through the patient portal or by calling our reception at least 24 hours in advance."
+
+7. How do I access my medical records?
+Answer: "You can access your medical records by logging into our patient portal using your credentials. For further assistance, you can contact our records department."
+
+8. Are there any emergency services available?
+Answer: "Yes, we provide emergency medical services 24/7. Our emergency room is equipped with the latest technology and staffed by experienced professionals."
+
+9. How do I contact a doctor after hours?
+Answer: "If you need to reach a doctor after hours, please contact our emergency services, or use the 'Contact a Doctor' feature in our mobile app for telemedicine consultations."
+
+10. What is the procedure to get a prescription refilled?
+Answer: "To request a prescription refill, please log into your patient portal and submit a request, or call the pharmacy directly to check the availability of your medication."
+
+11. Do you offer telemedicine services?
+Answer: "Yes, we offer telemedicine services for remote consultations with our doctors. You can book an appointment through our website or app."
+
+12. What specialties are available at your hospital?
+Answer: "Our hospital offers various specialties, including cardiology, neurology, orthopedics, pediatrics, dermatology, and more."
+
+13. What payment methods do you accept?
+Answer: "We accept a variety of payment methods, including credit/debit cards, insurance, and cash payments. Please check with our billing department for more details."
+
+14. Can I get a second opinion from another doctor?
+Answer: "Yes, we encourage patients to seek a second opinion. You can schedule an appointment with a different specialist by calling our reception."
+
+15. Are there any dietary restrictions for inpatients?
+Answer: "Dietary restrictions depend on the patient’s medical condition. Our in-house nutritionists work closely with doctors to provide suitable meals for each patient."
+
+16. What is your policy for patient confidentiality?
+Answer: "We take patient confidentiality seriously. All medical information is stored securely, and we adhere to all applicable privacy regulations, including HIPAA."
+
+17. Can I get an X-ray at your hospital?
+Answer: "Yes, we offer X-ray services in our diagnostic department. You can book an appointment or walk in during regular hours for X-ray imaging."
+
+18. How do I request a medical certificate?
+Answer: "To request a medical certificate, please visit the hospital or contact your doctor directly. They will assess your condition and provide the required certificate."
+
+19. What are the hospital's visiting hours?
+Answer: "Visiting hours are from 10 AM to 7 PM every day. Please note that we allow only immediate family members to visit patients during this time."
+
+20. Are there any discounts for senior citizens or children?
+Answer: "Yes, we offer special discounts for senior citizens and children on various services. Please check with our reception for more details on eligibility and discounts."
+
+21. How can I get a copy of my hospital bill?
+Answer: "You can obtain a copy of your hospital bill through the patient portal, or by requesting one from our billing department at the hospital."
+
+22. Do you have an emergency contact number?
+Answer: "Yes, our emergency contact number is [insert number], which is available 24/7 for any urgent medical needs."
+
+23. How can I get a vaccination at your hospital?
+Answer: "Vaccinations are available at our hospital by appointment or walk-in, depending on the type of vaccine. Please check our website for more details."
+
+24. Is parking available at your hospital?
+Answer: "Yes, we have a large parking facility available for patients and visitors, with designated spots for handicapped access."
+
+25. Do you provide home healthcare services?
+Answer: "Yes, we offer home healthcare services for patients who are unable to visit the hospital. Please contact our home care department for more information."
+
