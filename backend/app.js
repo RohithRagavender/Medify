@@ -24,7 +24,7 @@ const twilioClient = new twilio(accountSid, authToken);
 
 app.use(
   cors({
-    origin: ["https://hoszi.netlify.app", process.env.DASHBOARD_URL],
+    origin: ["https://hoszi.netlify.app", "https://hoszi-dashboard.netlify.app"],
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
