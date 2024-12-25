@@ -313,7 +313,7 @@ const AppointmentForm = () => {
   useEffect(() => {
     const fetchDoctors = async () => {
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/user/doctors",
+        "https://medify-1-de1j.onrender.com/api/v1/user/doctors",
         { withCredentials: true }
       );
       setDoctors(data.doctors);
@@ -327,7 +327,7 @@ const AppointmentForm = () => {
       // Create the appointment
       const { data } = await axios.post(
         
-        "http://localhost:4000/api/v1/appointment/post",
+        "https://medify-1-de1j.onrender.com/api/v1/appointment/post",
         {
           firstName,
           lastName,
@@ -352,7 +352,7 @@ const AppointmentForm = () => {
       // Send SMS Reminder
       try {
         await axios.post(
-          "http://localhost:4000/api/v1/send-reminder", {
+          "https://medify-1-de1j.onrender.com/api/v1/send-reminder", {
           phone,
           appointmentDate,
         });

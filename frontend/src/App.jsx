@@ -23,7 +23,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/v1/user/patient/me",
+          "https://medify-1-de1j.onrender.com/api/v1/user/patient/me",
           {
             withCredentials: true,
           }
