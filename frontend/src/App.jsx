@@ -19,25 +19,45 @@ const App = () => {
   const { isAuthenticated, setIsAuthenticated, setUser } =
     useContext(Context);
 
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         "https://medify-1-de1j.onrender.com/api/v1/user/patient/me",
+  //         {
+  //           withCredentials: true,
+  //         }
+  //       );
+  //       setIsAuthenticated(true);
+  //       setUser(response.data.user);
+  //     } catch (error) {
+  //       setIsAuthenticated(false);
+  //       setUser({});
+  //     }
+  //   };
+  //   fetchUser();
+  // }, [isAuthenticated]);
+
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
           "https://medify-1-de1j.onrender.com/api/v1/user/patient/me",
-          {
-            withCredentials: true,
-          }
+          { withCredentials: true }
         );
         setIsAuthenticated(true);
         setUser(response.data.user);
       } catch (error) {
-        setIsAuthenticated(false);
-        setUser({});
+        if (error.response && error.response.status === 401) {
+          setIsAuthenticated(false);
+          setUser({});
+        } else {
+          console.error("An error occurred:", error);
+        }
       }
     };
     fetchUser();
-  }, [isAuthenticated]);
-
+  }, []);
 
   return (
     <>
