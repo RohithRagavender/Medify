@@ -49,23 +49,20 @@ app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/appointment", appointmentRouter);
 
-// Twilio Reminder Route
 app.post("/api/v1/send-reminder", async (req, res) => {
   let { phone, appointmentDate } = req.body;
 
-  // Basic validation for 10-digit Indian numbers
   if (!phone || !phone.match(/^\d{10}$/)) {
     return res.status(400).json({
       message: "Invalid phone number format. Use a 10-digit number like 6379851657.",
     });
   }
 
-  // Add the +91 country code for Indian numbers
   phone = `+91${phone}`;
 
   try {
     const message = `Reminder: You have an appointment scheduled on ${appointmentDate}. Please arrive 30 minutes early.`;
-    
+
     // Send SMS using Twilio API
     const sms = await twilioClient.messages.create({
       body: message,
@@ -73,19 +70,23 @@ app.post("/api/v1/send-reminder", async (req, res) => {
       to: phone,
     });
 
-    // Log the response from Twilio API for debugging purposes
+    // Log the Twilio response
     console.log("Twilio SMS response:", sms);
 
-    // Success response
     res.status(200).json({ message: "Reminder sent successfully", sms });
-
   } catch (error) {
-    // Log error for debugging
-    console.error("Error sending SMS:", error);
+    // Log the complete error response from Twilio
+    console.error("Twilio API error:", error);
 
-    // Check for specific error codes or messages
-    const errorMessage = error?.message || "Failed to send reminder";
-    res.status(500).json({ message: errorMessage, error: error.message });
+    // Log error message for debugging
+    if (error?.code) {
+      console.error("Twilio error code:", error.code);  // Twilio specific error code
+    }
+    if (error?.message) {
+      console.error("Twilio error message:", error.message);  // Twilio error message
+    }
+
+    res.status(500).json({ message: "Failed to send reminder", error: error.message });
   }
 });
 
