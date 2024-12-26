@@ -27,6 +27,9 @@ app.use(
     origin: ["https://hoszi.netlify.app", "https://hoszi-dashboard.netlify.app"],
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"], // Allow custom headers
+    exposedHeaders: ["Set-Cookie"], // Expose Set-Cookie to the client
+
   })
 );
 
