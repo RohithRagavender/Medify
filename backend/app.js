@@ -1,7 +1,3 @@
-
-
-//-------------------Twilio Experiment code----------
-
 import express from "express";
 import { dbConnection } from "./database/dbConnection.js";
 import { config } from "dotenv";
@@ -20,24 +16,27 @@ config({ path: ".env" });
 // Twilio Configuration
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
+const twilioPhoneNumber = process.env.TWILIO_PHONE_NUMBER;
+
 const twilioClient = new twilio(accountSid, authToken);
 
+// CORS configuration
 app.use(
   cors({
     origin: ["https://hoszi.netlify.app", "https://hoszi-dashboard.netlify.app"],
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
-    allowedHeaders: ["Content-Type", "Authorization"], // Allow custom headers
-    exposedHeaders: ["Set-Cookie"], // Expose Set-Cookie to the client
-
+    allowedHeaders: ["Content-Type", "Authorization"],
+    exposedHeaders: ["Set-Cookie"],
   })
 );
 
-app.options("*", cors()); 
+app.options("*", cors()); // Pre-flight request handling
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// File upload handling
 app.use(
   fileUpload({
     useTempFiles: true,
@@ -56,7 +55,9 @@ app.post("/api/v1/send-reminder", async (req, res) => {
 
   // Basic validation for 10-digit Indian numbers
   if (!phone || !phone.match(/^\d{10}$/)) {
-    return res.status(400).json({ message: "Invalid phone number format. Use a 10-digit number like 6379851657." });
+    return res.status(400).json({
+      message: "Invalid phone number format. Use a 10-digit number like 6379851657.",
+    });
   }
 
   // Add the +91 country code for Indian numbers
@@ -64,19 +65,29 @@ app.post("/api/v1/send-reminder", async (req, res) => {
 
   try {
     const message = `Reminder: You have an appointment scheduled on ${appointmentDate}. Please arrive 30 minutes early.`;
+    
+    // Send SMS using Twilio API
     const sms = await twilioClient.messages.create({
       body: message,
-      from: process.env.TWILIO_PHONE_NUMBER, // Twilio verified phone number
+      from: twilioPhoneNumber, // Twilio verified phone number
       to: phone,
     });
 
+    // Log the response from Twilio API for debugging purposes
+    console.log("Twilio SMS response:", sms);
+
+    // Success response
     res.status(200).json({ message: "Reminder sent successfully", sms });
+
   } catch (error) {
+    // Log error for debugging
     console.error("Error sending SMS:", error);
-    res.status(500).json({ message: "Failed to send reminder", error: error.message });
+
+    // Check for specific error codes or messages
+    const errorMessage = error?.message || "Failed to send reminder";
+    res.status(500).json({ message: errorMessage, error: error.message });
   }
 });
-
 
 // Database connection
 dbConnection();
@@ -85,5 +96,3 @@ dbConnection();
 app.use(errorMiddleware);
 
 export default app;
-
-
