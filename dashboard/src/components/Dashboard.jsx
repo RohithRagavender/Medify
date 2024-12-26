@@ -59,8 +59,7 @@ const Dashboard = () => {
               <div>
                 <p>Hello </p>
                 <h5>
-                  {admin &&
-                    `${admin.firstName} ${admin.lastName}`}{" "}
+                Supervisor
                 </h5>
               </div>
               <p>

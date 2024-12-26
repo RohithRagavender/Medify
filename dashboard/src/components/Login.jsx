@@ -28,7 +28,7 @@ const Login = () => {
         .then((res) => {
           toast.success(res.data.message);
           setIsAuthenticated(true);
-          navigateTo("/");
+          // navigateTo("/");
           setEmail("");
           setPassword("");
           setConfirmPassword("");
@@ -39,7 +39,7 @@ const Login = () => {
   };
 
   if (isAuthenticated) {
-    return <Navigate to={"/dashboard"} />;
+    return <Navigate to={"/"} />;
   }
 
   return (
