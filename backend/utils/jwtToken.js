@@ -10,6 +10,8 @@ export const generateToken = (user, message, statusCode, res) => {
         Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
       ),// cookie_expire na default ah 7 nu vaichiruka next varuthu ella time format 24hr 60min 60sec and 1000milisecond,
       httpOnly: true,
+      secure: process.env.NODE_ENV === "production", // Only send over HTTPS in production
+      sameSite: "None", // Required for cross-origin cookies
     })
     .json({
       success: true,
